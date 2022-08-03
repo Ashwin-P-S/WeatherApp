@@ -15,7 +15,6 @@ body {
     border-radius: 1rem;
 }
 
-
 header {
     margin: 1rem;
     padding: .5rem;
@@ -32,7 +31,7 @@ header {
     justify-content: center;
 }
 
-.input > input {
+.input>input {
     padding: 1.3rem;
     margin: .5rem;
     font-size: large;
@@ -49,7 +48,7 @@ header {
     flex-wrap: wrap;
 }
 
-.btn > input {
+.btn>input {
     padding: 10px 20px;
     margin: 15px 20px;
     border-radius: 5px;
@@ -62,7 +61,7 @@ header {
     border-color: #FF6A88;
 }
 
-.btn > input:hover {
+.btn>input:hover {
     box-shadow: 0 2px 4px #FF6A88;
     background-color: #FF6A88;
     color: #fff;
@@ -83,7 +82,12 @@ header {
     font-size: 2rem;
 }
 
-#temperature, #humidity, #windSpeed {
+#temperature,
+#feels_like,
+#humidity,
+#windSpeed,
+#pressure,
+#visibility {
     font-size: 1.5rem;
 }
 
@@ -97,24 +101,24 @@ footer {
     font-weight: 500;
 }
 
-footer > p {
+footer>p {
     display: grid;
     place-items: center;
     margin: 10px;
 }
 
-footer > p > a {
+footer>p>a {
     text-decoration: none;
     color: black;
 }
 
-footer > p > a:hover {
+footer>p>a:hover {
     color: #FF6A88;
     transition: ease .3s;
 }
 
 @media only screen and (max-width: 362px) {
-    .btn > input {
+    .btn>input {
         margin: 15px 15px;
     }
 }
@@ -123,7 +127,8 @@ footer > p > a:hover {
     .card {
         margin: 2rem 1rem;
     }
-    .btn > input {
+
+    .btn>input {
         background-color: #FF6A88;
         color: white;
         box-shadow: 0 2px 4px #FF6A88;
