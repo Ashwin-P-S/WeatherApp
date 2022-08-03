@@ -12,6 +12,7 @@ let fetchApi = async (url, location) => {
         
         temperature = (data["main"]["temp"]-273.15).toPrecision(4);
         feelsLike = (data["main"]["feels_like"]-273.15).toPrecision(4);
+        country = data["sys"]["country"]
 
         humidity = data["main"]["humidity"];
         description = data["weather"][0]["description"];
@@ -19,7 +20,7 @@ let fetchApi = async (url, location) => {
         pressure = data["main"]["pressure"];
         visibility = (data["visibility"])/1000;
 
-        showData(temperature, feelsLike,  humidity, description, windSpeed, location, pressure, visibility);
+        showData(country, temperature, feelsLike,  humidity, description, windSpeed, location, pressure, visibility);
 
     })
     .catch(() => {
@@ -56,6 +57,7 @@ let clearData = () => {
 
     document.getElementById('location').value = null;
     document.getElementById('locate').innerHTML = null;
+    document.getElementById('country').innerHTML = null;
     document.getElementById('temperature').innerHTML = null;
     document.getElementById('description').innerHTML = null;
     document.getElementById('humidity').innerHTML = null;
@@ -65,11 +67,12 @@ let clearData = () => {
     document.getElementById('visibility').innerHTML = null;
 }
 
-let showData = (temperature, feelsLike, humidity, description, windSpeed, location, pressure, visibility) => {
+let showData = (country, temperature, feelsLike, humidity, description, windSpeed, location, pressure, visibility) => {
 
     document.getElementById('locate').innerHTML = titleCase(location);
+    document.getElementById('country').innerHTML = country
     document.getElementById('description').innerHTML = titleCase(description);
-    document.getElementById('temperature').innerHTML = "Temperature : " + temperature + " °C";
+    document.getElementById('temperature').innerHTML = temperature + " °C";
     document.getElementById('feels_like').innerHTML = "Feels Like : " + feelsLike + " °C";
     document.getElementById('humidity').innerHTML = "Humidity : " + humidity + " %";
     document.getElementById('windSpeed').innerHTML = "Wind Speed : " + windSpeed + " m/s";
