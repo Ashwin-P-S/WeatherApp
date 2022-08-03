@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@800&family=Josefin+Sans&family=Poppins:wght@300;400&display=swap');
+
+body {
+    background-color: #FF9A8B;
+    background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+}
+
+.card {
+    background-color: white;
+    padding: 1rem;
+    margin: 2rem;
+    height: 100%;
+    width: auto;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+
+header {
+    margin: 1rem;
+    padding: .5rem;
+    font-size: xx-large;
+    font-family: 'Sora', sans-serif;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    cursor: default;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+}
+
+.input > input {
+    padding: 1.3rem;
+    margin: .5rem;
+    font-size: large;
+    font-family: 'Josefin sans', sans-serif;
+    caret-color: red;
+    border-color: #FF6A88;
+    border-radius: 9px;
+    border-width: 1px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn > input {
+    padding: 10px 20px;
+    margin: 15px 20px;
+    border-radius: 5px;
+    border-width: 1.5px;
+    font-size: medium;
+    color: #FF6A88;
+    font-family: 'Josefin sans', sans-serif;
+    box-shadow: 0 1px 2px #FF6A88;
+    background-color: white;
+    border-color: #FF6A88;
+}
+
+.btn > input:hover {
+    box-shadow: 0 2px 4px #FF6A88;
+    background-color: #FF6A88;
+    color: #fff;
+}
+
+.output {
+    display: flex;
+    justify-content: center;
+    font-family: 'Josefin sans', sans-serif;
+}
+
+#locate {
+    font-size: xx-large;
+    font-family: 'Sora', sans-serif;
+}
+
+#description {
+    font-size: 2rem;
+}
+
+#temperature, #humidity, #windSpeed {
+    font-size: 1.5rem;
+}
+
+footer {
+    margin: 1rem;
+    padding: .5rem;
+    font-size: medium;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+footer > p {
+    display: grid;
+    place-items: center;
+    margin: 10px;
+}
+
+footer > p > a {
+    text-decoration: none;
+    color: black;
+}
+
+footer > p > a:hover {
+    color: #FF6A88;
+    transition: ease .3s;
+}
+
+@media only screen and (max-width: 362px) {
+    .btn > input {
+        margin: 15px 15px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        margin: 2rem 1rem;
+    }
+    .btn > input {
+        background-color: #FF6A88;
+        color: white;
+        box-shadow: 0 2px 4px #FF6A88;
+    }
+}

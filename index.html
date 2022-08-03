@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./res/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/style.css">
+    <title> Weather Forecast </title>
+</head>
+
+<body>
+
+    <script src="./src/script.js"> </script>
+
+    <div class="card">
+
+        <header>
+            <p> Weather Forecast</p>
+        </header>
+
+        <div class="input">
+            <input id='location' type="text" placeholder="Enter Location" autocomplete="off" required />
+        </div>
+        <div class="btn">
+            <input type="button" value="Search" onclick="getWeather()" />
+            <input type="button" value="Clear" onclick="clearData()" />
+        </div>
+
+        <div class="output">
+            <div>
+                <center>
+                    <p id="locate"></p>
+                    <p id="description"></p>
+                    <p id="temperature"></p>
+                    <p id="humidity"></p>
+                    <p id="windSpeed"></p>
+                </center>
+            </div>
+        </div>
+
+        <footer>
+            <center>
+                <p> Detect and Fetch Weather using API</p>
+            </center>
+            <p> Credits to <a href="https://openweathermap.org" target="_blank">OpenWeatherMap.org</a> </p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
