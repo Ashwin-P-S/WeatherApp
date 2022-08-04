@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A Weather Forecasting App by @Ashwin  ">
+    <meta name="description" content="A Weather Forecasting App by @Ashwin">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="apple-touch-icon" href="./res/favicon.png" type="image/x-icon">
     <link rel="icon" href="./res/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./src/style.css">
     <title> Weather App </title>
 </head>
 
-<body>
+<body onload="setCurrentYear()">
 
     <script src="./src/script.js"> </script>
 
@@ -32,25 +34,29 @@
 
         <div class="output">
             <div>
-                <center>
-                    <p id="locate"></p>
-                    <p id="country"></p>
-                    <p id="description"></p>
-                    <p id="temperature"></p>
-                    <p id="feels_like"></p>
-                    <p id="humidity"></p>
-                    <p id="windSpeed"></p>
-                    <p id="pressure"></p>
-                    <p id="visibility"></p>
-                </center>
+                <p id="locate"></p>
+                <p id="country"></p>
+                <p id="description"></p>
+                <p id="temperature"></p>
+                <p id="feels_like"></p>
+                <p id="humidity"></p>
+                <p id="windSpeed"></p>
+                <p id="pressure"></p>
+                <p id="visibility"></p>
             </div>
         </div>
 
         <footer>
-            <center>
-                <p> Detect and Fetch Weather using API</p>
-            </center>
-            <p> Credits to <a href="https://openweathermap.org" target="_blank">OpenWeatherMap.org</a> </p>
+            <p class="cont">
+                <a id="weather" href="https://www.instagram.com/explore/tags/weather/" target="_blank" >
+                    #Weather
+                </a>
+                <br>
+                <span class="material-symbols-outlined">
+                    ac_unit
+                </span>
+            </p>
+            <p> Copyrights @<a id="cpy"></a></p>
         </footer>
 
     </div>

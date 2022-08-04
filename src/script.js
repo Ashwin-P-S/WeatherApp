@@ -1,5 +1,5 @@
 
-let fetchApi = async (url, location) => {
+const fetchApi = async (url, location) => {
 
     var temperature, humidity, description, windSpeed;
 
@@ -30,7 +30,7 @@ let fetchApi = async (url, location) => {
 
 }
 
-let getWeather = () => {
+const getWeather = () => {
 
     var location = document.getElementById('location').value;
     
@@ -42,18 +42,18 @@ let getWeather = () => {
 
 }
 
-let titleCase = (str) => {
+const titleCase = (str) => {
 
     return str.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
 }
 
-let catchError = (errorMsg) => {
+const catchError = (errorMsg) => {
 
     clearData();
     document.getElementById('description').innerHTML = errorMsg;
 }
 
-let clearData = () => {
+const clearData = () => {
 
     document.getElementById('location').value = null;
     document.getElementById('locate').innerHTML = null;
@@ -67,7 +67,7 @@ let clearData = () => {
     document.getElementById('visibility').innerHTML = null;
 }
 
-let showData = (country, temperature, feelsLike, humidity, description, windSpeed, location, pressure, visibility) => {
+const showData = (country, temperature, feelsLike, humidity, description, windSpeed, location, pressure, visibility) => {
 
     document.getElementById('locate').innerHTML = titleCase(location);
     document.getElementById('country').innerHTML = country
@@ -78,4 +78,10 @@ let showData = (country, temperature, feelsLike, humidity, description, windSpee
     document.getElementById('windSpeed').innerHTML = "Wind Speed : " + windSpeed + " m/s";
     document.getElementById('pressure').innerHTML = "Pressure : " + pressure + " hPa";
     document.getElementById('visibility').innerHTML = "Visibility : " + visibility + " Km";
+}
+
+const setCurrentYear = () => {
+
+    const year = new Date().getFullYear();
+    document.getElementById("cpy").innerHTML = year;
 }
