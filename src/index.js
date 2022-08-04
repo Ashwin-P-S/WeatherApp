@@ -1,7 +1,7 @@
 
 const fetchApi = async (url, location) => {
 
-    var temperature, humidity, description, windSpeed, iconId, icon;
+    var temperature, humidity, description, windSpeed, iconId;
 
     await fetch(url)
     .then((response) => { 
@@ -12,7 +12,7 @@ const fetchApi = async (url, location) => {
         
         temperature = (data["main"]["temp"]-273.15).toPrecision(2);
         feelsLike = (data["main"]["feels_like"]-273.15).toPrecision(4);
-        country = data["sys"]["country"]
+        country = data["sys"]["country"];
 
         humidity = data["main"]["humidity"];
         description = data["weather"][0]["description"];
@@ -34,9 +34,9 @@ const fetchApi = async (url, location) => {
 
 const getWeather = () => {
 
-    var location = document.getElementById('location').value;
+    const location = document.getElementById('location').value;
     
-    let apiKey = '63fcf6ac9a00124665e8461cfe2370bb';
+    const apiKey = '63fcf6ac9a00124665e8461cfe2370bb';
 
     let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + apiKey;
 
@@ -71,14 +71,14 @@ const clearData = () => {
 
 const showData = (country, iconId, temperature, feelsLike, humidity, description, windSpeed, location, pressure, visibility) => {
 
-    const icon = "http://openweathermap.org/img/wn/"+ iconId +"@2x.png"
-    let img = `<img src="${icon}" height=125 widht=125 >`
+    let icon = "http://openweathermap.org/img/wn/"+ iconId +"@2x.png"
+    const img = `<img src="${icon}" height=125 widht=125 >`
 
     document.getElementById('locate').innerHTML = titleCase(location);
     document.getElementById('country').innerHTML = country
     document.getElementById('description').innerHTML = titleCase(description);
     document.getElementById('temperature').innerHTML = img + "<br>" + temperature + "°C";
-    document.getElementById('feels_like').innerHTML = "Feels Like : " + feelsLike + "°C";
+    document.getElementById('feels_like').innerHTML = "Feels Like " + feelsLike + "°C";
     document.getElementById('humidity').innerHTML = "Humidity : " + humidity + " %";
     document.getElementById('windSpeed').innerHTML = "Wind Speed : " + windSpeed + " m/s";
     document.getElementById('pressure').innerHTML = "Pressure : " + pressure + " hPa";
