@@ -52,7 +52,7 @@ const titleCase = (str) => {
 const catchError = (errorMsg) => {
 
     clearData();
-    document.getElementById('description').innerHTML = errorMsg;
+    document.getElementById('humidity').innerHTML = errorMsg;
 }
 
 const clearData = () => {

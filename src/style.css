@@ -31,7 +31,7 @@ header {
     justify-content: center;
 }
 
-.input>input {
+.input > input {
     padding: 1.3rem;
     margin: .5rem;
     font-size: large;
@@ -48,10 +48,10 @@ header {
     flex-wrap: wrap;
 }
 
-.btn>input {
+.btn > input {
     padding: 10px 20px;
     margin: 15px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     border-width: 1.5px;
     font-size: medium;
     color: #FF6A88;
@@ -61,7 +61,7 @@ header {
     border-color: #FF6A88;
 }
 
-.btn>input:hover {
+.btn > input:hover {
     box-shadow: 0 2px 4px #FF6A88;
     background-color: #FF6A88;
     color: #fff;
@@ -85,6 +85,7 @@ header {
 }
 
 #temperature {
+    margin-top: auto;
     font-size: 2rem;
 }
 
