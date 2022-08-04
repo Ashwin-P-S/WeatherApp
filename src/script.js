@@ -1,7 +1,7 @@
 
 const fetchApi = async (url, location) => {
 
-    var temperature, humidity, description, windSpeed;
+    var temperature, humidity, description, windSpeed, iconId, icon;
 
     await fetch(url)
     .then((response) => { 
@@ -10,7 +10,7 @@ const fetchApi = async (url, location) => {
     })
     .then((data) => {
         
-        temperature = (data["main"]["temp"]-273.15).toPrecision(4);
+        temperature = (data["main"]["temp"]-273.15).toPrecision(2);
         feelsLike = (data["main"]["feels_like"]-273.15).toPrecision(4);
         country = data["sys"]["country"]
 
@@ -20,7 +20,9 @@ const fetchApi = async (url, location) => {
         pressure = data["main"]["pressure"];
         visibility = (data["visibility"])/1000;
 
-        showData(country, temperature, feelsLike,  humidity, description, windSpeed, location, pressure, visibility);
+        iconId = (data["weather"][0]["icon"]).slice(0,-1) + "n";
+
+        showData(country, iconId, temperature, feelsLike,  humidity, description, windSpeed, location, pressure, visibility);
 
     })
     .catch(() => {
@@ -67,13 +69,16 @@ const clearData = () => {
     document.getElementById('visibility').innerHTML = null;
 }
 
-const showData = (country, temperature, feelsLike, humidity, description, windSpeed, location, pressure, visibility) => {
+const showData = (country, iconId, temperature, feelsLike, humidity, description, windSpeed, location, pressure, visibility) => {
+
+    const icon = "http://openweathermap.org/img/wn/"+ iconId +"@2x.png"
+    let img = `<img src="${icon}" height=125 widht=125 >`
 
     document.getElementById('locate').innerHTML = titleCase(location);
     document.getElementById('country').innerHTML = country
     document.getElementById('description').innerHTML = titleCase(description);
-    document.getElementById('temperature').innerHTML = temperature + " °C";
-    document.getElementById('feels_like').innerHTML = "Feels Like : " + feelsLike + " °C";
+    document.getElementById('temperature').innerHTML = img + "<br>" + temperature + "°C";
+    document.getElementById('feels_like').innerHTML = "Feels Like : " + feelsLike + "°C";
     document.getElementById('humidity').innerHTML = "Humidity : " + humidity + " %";
     document.getElementById('windSpeed').innerHTML = "Wind Speed : " + windSpeed + " m/s";
     document.getElementById('pressure').innerHTML = "Pressure : " + pressure + " hPa";

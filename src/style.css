@@ -81,10 +81,14 @@ header {
 
 #description {
     font-size: 2rem;
+    margin-bottom: auto;
+}
+
+#temperature {
+    font-size: 2rem;
 }
 
 #country,
-#temperature,
 #feels_like,
 #humidity,
 #windSpeed,
@@ -117,6 +121,7 @@ span:hover {
 #weather {
     margin: 50px 10px 10px 10px;
     text-decoration: none;
+    color: #000;
 }
 
 #weather:hover {
