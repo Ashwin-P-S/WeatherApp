@@ -1,10 +1,10 @@
 // Website OnLoad
 // Set Copyrights Year as CurrentYear
-const setCurrentYear = () => {
+// const setCurrentYear = () => {
 
-    const year = new Date().getFullYear();
-    document.getElementById("cpy").innerHTML = year;
-}
+//     const year = new Date().getFullYear();
+//     document.getElementById("cpy").innerHTML = year;
+// }
 
 // Get Weather for given Location
 const getWeather = () => {
