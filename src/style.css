@@ -31,7 +31,7 @@ header {
     justify-content: center;
 }
 
-.input > input {
+#location {
     padding: 1.3rem;
     margin: .5rem;
     font-size: large;
@@ -42,7 +42,11 @@ header {
     border-width: 1px;
 }
 
-.input > input:focus {
+#location:is(:active, :focus) {
+    outline: none;
+}
+
+#location:focus {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-color: #FF6A88;
 }
@@ -53,7 +57,7 @@ header {
     flex-wrap: wrap;
 }
 
-.btn > input {
+.btn>input {
     padding: 10px 20px;
     margin: 15px 20px;
     border-radius: 5px;
@@ -66,10 +70,24 @@ header {
     border-color: #FF6A88;
 }
 
-.btn > input:hover {
+button {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 10px 20px;
+    color: #FF6A88;
+    box-shadow: 0 1px 2px #FF6A88;
+    background-color: white;
+    border-color: #FF6A88;
+}
+
+.btn>input:is(:hover, :active, :focus),
+button:is(:hover, :active, :focus) {
     box-shadow: 0 2px 4px #FF6A88;
     background-color: #FF6A88;
     color: #fff;
+    outline: none;
+    transition: ease .3s;
 }
 
 .output {
@@ -114,12 +132,12 @@ footer {
     text-align: center;
 }
 
-.cont > span {
+.cont>span {
     font-size: xx-large;
     margin-top: 10px;
 }
 
-span:hover {
+span:is(:hover, :focus, :active) {
     color: #FF6A88;
     cursor: default;
 }
@@ -130,9 +148,10 @@ span:hover {
     color: #000;
 }
 
-#weather:hover {
+#weather:is(:hover, :focus, :active) {
     color: #FF6A88;
     transition: ease .3s;
+    outline: none;
 }
 
 
@@ -143,7 +162,7 @@ span:hover {
 }
 
 @media only screen and (max-width: 362px) {
-    .btn > input {
+    .btn>input {
         margin: 15px 15px;
     }
 }
@@ -153,7 +172,7 @@ span:hover {
         margin: 2rem 1rem;
     }
 
-    .btn > input {
+    .btn>input {
         background-color: #FF6A88;
         color: white;
         box-shadow: 0 2px 4px #FF6A88;
