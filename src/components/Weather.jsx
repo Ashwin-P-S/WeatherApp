@@ -18,7 +18,7 @@ const Weather = () => {
                 let lon = position.coords.longitude;
 
                 let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-
+                
                 fetchApi(url);
             }, () => catchError("Warning: Location is disabled!"));
         }
@@ -37,7 +37,7 @@ const Weather = () => {
     };
 
     const fetchApi = async (url) => {
-
+        setErrorMsg('');
         await axios.get(url)
             .then((response) => response.data)
             .then((data) => fetchDetails(data))
