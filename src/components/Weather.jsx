@@ -1,12 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import ErrorMessage from './ErrorMessage';
 import WeatherDetails from './WeatherDetails';
+import { CLEAR_STORE, FETCH_WEATHER_REQUEST } from '../constants/actionTypes';
 
 const Weather = () => {
-
+    const dispatch = useDispatch();
     const apiKey = "63fcf6ac9a00124665e8461cfe2370bb";
     const [weather, setWeather] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
@@ -18,7 +20,7 @@ const Weather = () => {
                 let lon = position.coords.longitude;
 
                 let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-                
+
                 fetchApi(url);
             }, () => catchError("Warning: Location is disabled!"));
         }
@@ -26,8 +28,14 @@ const Weather = () => {
 
     const getWeather = (event) => {
         event.preventDefault();
-
         const location = document.getElementById("location").value;
+
+        dispatch({
+            type: FETCH_WEATHER_REQUEST,
+            payload: {
+                city: location,
+            }
+        });
 
         let url = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey;
 
@@ -82,6 +90,7 @@ const Weather = () => {
     };
 
     const clearData = () => {
+        dispatch({ type: CLEAR_STORE });
         document.getElementById("location").value = null;
         setErrorMsg('');
         setWeather('');
