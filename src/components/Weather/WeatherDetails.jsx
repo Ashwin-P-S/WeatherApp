@@ -4,7 +4,7 @@ const WeatherDetails = ({ weather }) => {
     let icon = "http://openweathermap.org/img/wn/" + weather.iconId + "@2x.png";
 
     const titleCase = (str) =>
-        str.toLowerCase().replace(/\b\w/g, (s) => s.toUpperCase());
+        str?.toLowerCase().replace(/\b\w/g, (s) => s.toUpperCase());
 
     return (
         <div className="output">

@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Weather from "./components/Weather";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Weather from "./components/Weather/Weather";
 
 import "./style.css";
 
